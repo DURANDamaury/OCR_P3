@@ -1,0 +1,77 @@
+$PURPLE: #9356DC;
+$ROSE: #FF79DA;
+$GREEN: #99E2D0;
+$GREY: #353535;
+
+
+body
+    {
+        font-family: 'Roboto', sans-serif;
+        width: 100%;
+        ul 
+        {
+            list-style: none;
+            text-align: left;
+            padding-left: 0;
+        }
+    }
+
+h1
+    {
+        font-family: 'Shrikhand', cursive;
+    }
+h2
+    {
+        font-family: 'Shrikhand', cursive;
+        font-size: 1.2em;
+        margin-top: 0%;
+    }
+
+header
+    {
+        padding: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        i , .space
+        {
+            width: 10%;
+            font-size: 1.5em;
+        }
+        h1 
+        {margin: 0%;}
+    }
+/* ********************************* */
+/* ************** MAIN ************* */
+/* ********************************* */
+#IMAGE 
+    {
+        height: 200px;
+        overflow: hidden;
+
+        img
+        {
+            width: 100%;
+        }
+    }
+#NOM
+    {
+        border: #9356DC solid 5px;
+        border-radius: 25px 25px 0 0;
+    }
+/* ********************************* */
+/* ************* FOOTER ************ */
+/* ********************************* */
+footer
+    {
+        padding: 5%;
+        background-color: $GREY;
+        color: white;
+        line-height: 1.8em;
+
+        i 
+        {
+            font-size: 14px;
+            width: 30px;
+        }
+    }
