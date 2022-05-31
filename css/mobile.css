@@ -1,5 +1,6 @@
 body {
   font-family: "Roboto", sans-serif;
+  font-weight: 100;
   width: 100%;
 }
 body ul {
@@ -9,13 +10,22 @@ body ul {
 }
 
 h1 {
+  font-size: 1.7em;
+}
+
+h1, h2 {
   font-family: "Shrikhand", cursive;
 }
 
 h2 {
-  font-family: "Shrikhand", cursive;
   font-size: 1.2em;
-  margin-top: 0%;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: 300;
+  font-style: normal;
+  margin-top: 0;
 }
 
 header {
@@ -36,16 +46,66 @@ header h1 {
 /* ************** MAIN ************* */
 /* ********************************* */
 #IMAGE {
-  height: 200px;
-  overflow: hidden;
+  position: sticky;
+  z-index: 1;
 }
 #IMAGE img {
   width: 100%;
 }
 
 #NOM {
-  border: #9356DC solid 5px;
+  border: 1px solid #f6f6f6;
+  background-color: #f6f6f6;
   border-radius: 25px 25px 0 0;
+  margin-top: -25px;
+  position: sticky;
+  z-index: 2;
+  padding: 0 5% 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#NOM i {
+  font-size: 26px;
+}
+
+.CARTE {
+  padding-left: 5%;
+  background-color: #f6f6f6;
+}
+.CARTE .RECETTE {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color: white;
+  border-radius: 12px 0 0 12px;
+}
+.CARTE .RECETTE h4 {
+  margin: 0%;
+}
+.CARTE .PRIX {
+  display: flex;
+}
+.CARTE .PRIX .EUROS {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: flex-end;
+}
+.CARTE .PRIX .EUROS p {
+  margin: 0%;
+}
+.CARTE .PRIX .CHOIX {
+  /* display: none; */
+  display: flex;
+  width: 50px;
+  height: 50px;
+  background-color: #99E2D0;
+  color: white;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ********************************* */
