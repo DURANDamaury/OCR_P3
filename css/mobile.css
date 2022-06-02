@@ -1,3 +1,20 @@
+@keyframes SELECTION {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 65px;
+    padding: 3%;
+  }
+}
+@keyframes ROTATION {
+  from {
+    transform: rotate(520deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -87,19 +104,26 @@ header h1 {
 .CARTE .RECETTE {
   display: flex;
   justify-content: space-between;
-  height: 50px;
-  padding: 3%;
+  height: 65px;
   margin-bottom: 16px;
   background-color: white;
   border-radius: 12px 12px 12px 12px;
+  box-shadow: 0px 0px 16px #cdcdcf;
 }
 .CARTE .RECETTE h4 {
   margin: 0%;
+}
+.CARTE .RECETTE:hover > .PRIX > .CHOIX {
+  animation: SELECTION 1s ease-in-out 0s 1 normal forwards;
+}
+.CARTE .RECETTE:hover > .PRIX > .CHOIX > i {
+  animation: ROTATION 1s ease-in-out 0s 1 normal forwards;
 }
 .CARTE .RECETTE .DESCRIPTIF {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 3%;
 }
 .CARTE .RECETTE .DESCRIPTIF p {
   margin-top: 0%;
@@ -111,26 +135,28 @@ header h1 {
   display: flex;
 }
 .CARTE .PRIX .EUROS {
-  height: 45px;
+  width: 65px;
+  height: 65px;
   display: flex;
   align-items: flex-end;
+  justify-content: center;
 }
 .CARTE .PRIX .EUROS p {
   margin: 0%;
   font-weight: 900;
   font-size: 0.9em;
+  padding-bottom: 8px;
 }
 .CARTE .PRIX .CHOIX {
-  display: none;
-  /*
   display: flex;
-  width: 45px;
-  height: 45px;
-  background-color: $GREEN;
+  width: 0px;
+  padding: 0%;
+  border-radius: 0% 12% 12% 0%;
+  background-color: #99E2D0;
   color: white;
   justify-content: center;
   align-items: center;
-  */
+  overflow: hidden;
 }
 
 /* ********************************* */

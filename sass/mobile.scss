@@ -4,6 +4,21 @@ $GREEN: #99E2D0;
 $GREY: #353535;
 $GREYWHITE: #f6f6f6;
 
+@keyframes SELECTION 
+    {
+        from 
+        { width: 0px; }
+        to 
+        { width: 65px; padding: 3%;}
+    }
+
+@keyframes ROTATION 
+    {
+        from 
+        { transform: rotate(520deg);}    
+        to 
+        { transform: rotate(0deg);}    
+    }
 
 body
     {
@@ -105,47 +120,55 @@ header
             {
                 display: flex;
                 justify-content: space-between;
-                height: 50px;
-                padding: 3%;
+                height: 65px;
                 margin-bottom: 16px;
                 background-color: white;
                 border-radius: 12px 12px 12px 12px;
+                box-shadow: 0px 0px 16px #cdcdcf;
                 h4 
                 {
                     margin: 0%;
                 }
-        .DESCRIPTIF
-            {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                p {margin-top: 0%; margin-bottom: 0%; font-weight: 300; font-size: 1em;}
-            }
+                &:hover > .PRIX > .CHOIX
+                {animation: SELECTION 1s ease-in-out 0s 1 normal forwards;}
+                &:hover > .PRIX > .CHOIX > i
+                {animation: ROTATION 1s ease-in-out 0s 1 normal forwards;}
+                .DESCRIPTIF
+                {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 3%;
+                    p {margin-top: 0%; margin-bottom: 0%; font-weight: 300; font-size: 1em;}
+                }
 
-            }
-        .PRIX
-            {
-                display: flex;
-                .EUROS 
-                    {
-                        height: 45px;
-                        display: flex;
-                        align-items: flex-end;
-                        p {margin: 0%; font-weight: 900; font-size: 0.9em;}
-                    };
-                .CHOIX
-                    {
-                        display: none;
-                        /*
-                        display: flex;
-                        width: 45px;
-                        height: 45px;
-                        background-color: $GREEN;
-                        color: white;
-                        justify-content: center;
-                        align-items: center;
-                        */
-                    }
+                }
+            .PRIX
+                {
+                    display: flex;
+                    .EUROS 
+                        {
+                            width: 65px;
+                            height: 65px;
+                            display: flex;
+                            align-items: flex-end;
+                            justify-content: center;
+                            p {margin: 0%; font-weight: 900; font-size: 0.9em;
+                            padding-bottom: 8px}
+                        };
+                    .CHOIX
+                        {                        
+                            display: flex;
+                            width: 0px;
+                            padding: 0%;
+                            border-radius: 0% 12% 12% 0%;
+                            background-color: $GREEN;
+                            color: white;
+                            justify-content: center;
+                            align-items: center;
+                            overflow: hidden;
+                            
+                        }
             }
     }
 /* ********************************* */
