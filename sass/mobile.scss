@@ -3,6 +3,14 @@ $ROSE: #FF79DA;
 $GREEN: #99E2D0;
 $GREY: #353535;
 $GREYWHITE: #f6f6f6;
+$COEUR_DIMENSION: 26px;
+
+@mixin FLEX_CENTRE 
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;        
+    }
 
 @keyframes SELECTION 
     {
@@ -99,11 +107,23 @@ header
         display: flex;
         justify-content: space-between;
         align-items: center;
-        i 
-            {
-                font-size: 26px;
-            }
     }
+#LOVE
+    {
+        width: $COEUR_DIMENSION;
+        height: $COEUR_DIMENSION;
+        position: relative;
+    }
+    .fa-heart
+        {
+            font-size: $COEUR_DIMENSION;
+            position: absolute;
+            top: 0;
+            left: 0; 
+
+        }
+.COEUR_VIDE {color: black;}
+.COEUR_PLEIN {color: red;}
 
 .CARTE
     {
@@ -188,6 +208,30 @@ header
                             overflow: hidden;
                             
                         }
+            }
+    }
+
+#COMMANDE
+    {
+        width: auto;
+        height: 160px;
+        @include FLEX_CENTRE;
+        background-color: $GREYWHITE;
+        #BOUTON
+            {
+                height: 16px;
+                @include FLEX_CENTRE;
+                background: linear-gradient( $ROSE , $PURPLE );
+                color: white;
+                font-weight: 400;
+                padding: 16px 48px;
+                border-radius: 25px;
+                box-shadow: 6px 5px 15px #939191;
+                &:hover
+                {
+                    background: linear-gradient( lighten($ROSE, 10%) , lighten($PURPLE, 10%) );
+                    box-shadow: 6px 5px 15px #525151;
+                }
             }
     }
 /* ********************************* */

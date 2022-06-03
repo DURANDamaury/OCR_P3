@@ -83,8 +83,26 @@ header h1 {
   justify-content: space-between;
   align-items: center;
 }
-#NOM i {
+
+#LOVE {
+  width: 26px;
+  height: 26px;
+  position: relative;
+}
+
+.fa-heart {
   font-size: 26px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.COEUR_VIDE {
+  color: black;
+}
+
+.COEUR_PLEIN {
+  color: red;
 }
 
 .CARTE {
@@ -165,6 +183,31 @@ header h1 {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+
+#COMMANDE {
+  width: auto;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+}
+#COMMANDE #BOUTON {
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
+  font-weight: 400;
+  padding: 16px 48px;
+  border-radius: 25px;
+  box-shadow: 6px 5px 15px #939191;
+}
+#COMMANDE #BOUTON:hover {
+  background: linear-gradient(#fface8, #ae80e5);
+  box-shadow: 6px 5px 15px #525151;
 }
 
 /* ********************************* */
