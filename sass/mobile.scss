@@ -23,9 +23,19 @@ $COEUR_DIMENSION: 26px;
 @keyframes ROTATION 
     {
         from 
-        { transform: rotate(180deg);}    
+        { transform: rotate(270deg);}    
         to 
         { transform: rotate(0deg);}    
+    }
+
+@keyframes FULLHEART
+    {
+        from
+        {transform: scale(0.5);
+        color: red;}
+        to 
+        {transform: scale(1);
+        color: red;}
     }
 
 body
@@ -113,8 +123,13 @@ header
         width: $COEUR_DIMENSION;
         height: $COEUR_DIMENSION;
         position: relative;
-    }
-    .fa-heart
+        &:hover>.COEUR_PLEIN
+        {
+            animation: FULLHEART 500ms cubic-bezier(1, 0.32, 1, 1) 0s 1 normal forwards;
+
+        }
+
+        i
         {
             font-size: $COEUR_DIMENSION;
             position: absolute;
@@ -122,8 +137,22 @@ header
             left: 0; 
 
         }
-.COEUR_VIDE {color: black;}
-.COEUR_PLEIN {color: red;}
+    }
+    
+.COEUR_VIDE 
+    {
+    color: black;
+    z-index: 2;
+    }
+.COEUR_PLEIN 
+    {
+    z-index: 0;
+    background-clip: text;
+    -webkit-background-clip:text;
+    color: transparent;
+
+
+    }
 
 .CARTE
     {
@@ -150,9 +179,9 @@ header
                     margin: 0%;
                 }
                 &:hover > .PRIX > .CHOIX
-                {animation: SELECTION 300ms ease-in-out 0s 1 normal forwards;}
+                {animation: SELECTION 400ms ease-in-out 0s 1 normal forwards;}
                 &:hover > .PRIX > .CHOIX > i
-                {animation: ROTATION 300ms ease-in-out 0s 1 normal forwards;}
+                {animation: ROTATION 400ms ease-in-out 0s 1 normal forwards;}
                 .DESCRIPTIF
                 {
                     display: flex;

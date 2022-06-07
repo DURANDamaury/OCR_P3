@@ -9,10 +9,20 @@
 }
 @keyframes ROTATION {
   from {
-    transform: rotate(180deg);
+    transform: rotate(270deg);
   }
   to {
     transform: rotate(0deg);
+  }
+}
+@keyframes FULLHEART {
+  from {
+    transform: scale(0.5);
+    color: red;
+  }
+  to {
+    transform: scale(1);
+    color: red;
   }
 }
 body {
@@ -89,8 +99,10 @@ header h1 {
   height: 26px;
   position: relative;
 }
-
-.fa-heart {
+#LOVE:hover > .COEUR_PLEIN {
+  animation: FULLHEART 500ms cubic-bezier(1, 0.32, 1, 1) 0s 1 normal forwards;
+}
+#LOVE i {
   font-size: 26px;
   position: absolute;
   top: 0;
@@ -99,10 +111,14 @@ header h1 {
 
 .COEUR_VIDE {
   color: black;
+  z-index: 2;
 }
 
 .COEUR_PLEIN {
-  color: red;
+  z-index: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .CARTE {
@@ -132,10 +148,10 @@ header h1 {
   margin: 0%;
 }
 .CARTE .RECETTE:hover > .PRIX > .CHOIX {
-  animation: SELECTION 300ms ease-in-out 0s 1 normal forwards;
+  animation: SELECTION 400ms ease-in-out 0s 1 normal forwards;
 }
 .CARTE .RECETTE:hover > .PRIX > .CHOIX > i {
-  animation: ROTATION 300ms ease-in-out 0s 1 normal forwards;
+  animation: ROTATION 400ms ease-in-out 0s 1 normal forwards;
 }
 .CARTE .RECETTE .DESCRIPTIF {
   display: flex;
