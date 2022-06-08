@@ -4,7 +4,7 @@
   "description": "opc p3",
   "main": "index.js",
   "scripts": {
-   "sass": "sass --watch ./sass/mobile.scss:./css/mobile.css"
+   "sass": "sass --watch ./sass/:./css/"
   },
   "author": "",
   "license": "ISC"
