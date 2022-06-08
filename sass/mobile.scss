@@ -4,6 +4,13 @@ $GREEN: #99E2D0;
 $GREY: #353535;
 $GREYWHITE: #f6f6f6;
 $COEUR_DIMENSION: 26px;
+$NBR_RECETTE: 3; /* nombre de recette par carte */ 
+$CARTE_ANIM: 700ms; /* durée de l'animation des cartes */ 
+$RECETTE_ANIM: calc($CARTE_ANIM / $NBR_RECETTE) ; /* Durée de l'animation d'une recette */ 
+
+
+
+/* ANIMATIONS */
 
 @mixin FLEX_CENTRE 
     {
@@ -37,7 +44,34 @@ $COEUR_DIMENSION: 26px;
         {transform: scale(1);
         color: red;}
     }
+/* Animation des cartes au chargement */
+@keyframes ECART_RECETTES 
+    {
+        from 
+        {transform: translate(0, 10px);
+        opacity: 0;}
+        to 
+        {transform: translate(0,0);
+        opacity: 1;}
+    }
 
+/* on va générer le css de chaque recette avec un délais de démarrage différent */ 
+@for $i from 1 through 3
+    {
+        .R_#{$i}
+        {
+            transform: translate(0,10px);
+            opacity: 0;
+            animation-delay: $RECETTE_ANIM * $i;
+            animation-name: ECART_RECETTES;
+            animation-duration: $CARTE_ANIM;
+            animation-fill-mode: forwards;
+            animation-timing-function:ease-in-out;
+        }
+
+    }
+
+/* -------------------------------------------- */
 body
     {
         font-family: 'Roboto', sans-serif;
@@ -163,7 +197,7 @@ header
         .CARTE_DECORATION
             {width: 40px; height: 14px; border-top: 3px solid $GREEN;}
         
-        .LISTE_RECETTES {background-color: $GREYWHITE; padding-bottom: 14px;}
+        .RECETTE_LISTE {background-color: $GREYWHITE; padding-bottom: 14px;}
 
         .RECETTE 
             {
@@ -206,6 +240,7 @@ header
                     flex-grow: 1;
                 }
 
+
                 }
             .PRIX
                 {
@@ -238,6 +273,7 @@ header
                             
                         }
             }
+
     }
 
 #COMMANDE

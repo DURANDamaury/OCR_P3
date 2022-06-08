@@ -1,3 +1,8 @@
+@charset "UTF-8";
+/* nombre de recette par carte */
+/* durée de l'animation des cartes */
+/* Durée de l'animation d'une recette */
+/* ANIMATIONS */
 @keyframes SELECTION {
   from {
     width: 0px;
@@ -25,6 +30,49 @@
     color: red;
   }
 }
+/* Animation des cartes au chargement */
+@keyframes ECART_RECETTES {
+  from {
+    transform: translate(0, 10px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+/* on va générer le css de chaque recette avec un délais de démarrage différent */
+.R_1 {
+  transform: translate(0, 10px);
+  opacity: 0;
+  animation-delay: 233.3333333333ms;
+  animation-name: ECART_RECETTES;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.R_2 {
+  transform: translate(0, 10px);
+  opacity: 0;
+  animation-delay: 466.6666666667ms;
+  animation-name: ECART_RECETTES;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+.R_3 {
+  transform: translate(0, 10px);
+  opacity: 0;
+  animation-delay: 700ms;
+  animation-name: ECART_RECETTES;
+  animation-duration: 700ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+/* -------------------------------------------- */
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -131,7 +179,7 @@ header h1 {
   height: 14px;
   border-top: 3px solid #99E2D0;
 }
-.CARTE .LISTE_RECETTES {
+.CARTE .RECETTE_LISTE {
   background-color: #f6f6f6;
   padding-bottom: 14px;
 }
