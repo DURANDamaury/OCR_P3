@@ -3,6 +3,7 @@ $ROSE: #FF79DA;
 $GREEN: #99E2D0;
 $GREY: #353535;
 $GREYWHITE: #f6f6f6;
+$COEUR_DIMENSION: 26px;
 
 
 @mixin flex_centre
@@ -39,7 +40,7 @@ h3
 h4
     {
         font-size: 1em;
-        font-weight: 400;
+        font-weight: 300;
         color: #353535;
     }
 
@@ -80,9 +81,7 @@ body
 header
     {
         padding: 5%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex_centre;
 
         h1 
         {
@@ -102,22 +101,185 @@ header
 #EXPLORER
     {
         background-color: #f6f6f6;
-        height: 286px;
+        height: 186px;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        padding: 24px 40px;
+        justify-content: space-between;
+        padding: 50px 40px;
         text-align: center;
     }
-
+/* ****************************** */ 
+/* ********** FONCTION ********** */ 
+/* ****************************** */ 
 #FONCTION
     {
         background-color: white;
+        padding: 50px 20px;
     }
 
+.F_LISTE
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        &_VGT
+        {
+            position: relative;
+            display: flex;
+            height: 70px;
+            align-items: center;
+            background-color: $GREYWHITE;
+            border-radius: 25px;
+            margin-left: 12px;
+            padding-left: 35px;
+            box-shadow: 3px 2px 21px 2px #d7d6d6;
+            &:hover
+            {
+                background-color: #f5edff;
+                & :nth-child(2)
+                {color: $PURPLE;}
+            }
+            &_NUM
+            {
+                @include flex_centre;
+                position: absolute;
+                left: -12px;
+                background-color: $PURPLE;
+                color: white;
+                border-radius: 25px;
+                width: 24px;
+                height: 24px;
+                font-size: 0.9em;
+                font-weight: 400;
+
+            }
+            &_ICN
+            {
+                width: 15px;
+                font-size: 1.2em;
+                color: #525151;
+            }
+            &_TXT
+            {
+                padding-left: 20px;
+                font-size: 1em;
+                font-weight: 700;
+                font-stretch: condensed;
+            }
+        }
+    }
+/* ****************************** */ 
+/* ******** RESTAURANTS ********* */ 
+/* ****************************** */ 
 #RESTOS
     {
         background-color: $GREYWHITE;
+        padding: 50px 20px;
+    }
+
+.RESTOS_LST_VGT
+    {
+        display: block;
+        height: 250px;
+        text-decoration: none;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        box-shadow: 3px 2px 21px 2px #d7d6d6;
+    }
+
+.RESTOS_LST_VGT_IMG
+    {
+        position: relative;
+        &_NVU
+        {position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: $GREEN;
+        padding: 6px 12px;
+        color: #008766;
+        font-weight: 400;
+        font-size: 0.9em;
+        border-radius: 2px;}
+    }
+
+.RESTOS_LST_VGT_IMG img
+    {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        border-radius: 20px 20px 0 0;
+    }
+
+.RESTOS_LST_VGT_INF
+    {   
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        height: 76px;
+        border-radius: 0 0 20px 20px;
+        padding-right: 22px;
+    }
+
+.RESTOS_LST_VGT_INF_TXT
+    {
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 12px;
+        &_NOM
+        {
+            font-weight: 700;
+            padding-bottom: 2px;
+            font-size: 1.1em;
+        }
+        &_VIL
+        {
+            font-weight: 300;
+            padding-top: 2px;
+        }
+    }
+
+
+.RESTOS_LST_VGT_INF_COEUR
+    {
+    @include flex_centre;
+    &_ICN
+        {
+            width: $COEUR_DIMENSION;
+            height: $COEUR_DIMENSION;
+            position: relative;
+            &:hover>.COEUR_PLEIN
+            {
+                animation: FULLHEART 500ms cubic-bezier(1, 0.32, 1, 1) 0s 1 normal forwards;
+
+            }
+
+            i
+            {
+                font-size: $COEUR_DIMENSION;
+                position: absolute;
+                top: 0;
+                left: 0; 
+
+            }
+        }
+
+        .COEUR_VIDE 
+        {
+        color: black;
+        z-index: 2;
+        }
+        .COEUR_PLEIN 
+        {
+        z-index: 0;
+        background-clip: text;
+        -webkit-background-clip:text;
+        color: transparent;
+
+
+        }
     }
 /* ********************************* */
 /* ************* FOOTER ************ */

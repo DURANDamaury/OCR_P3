@@ -20,7 +20,7 @@ h3 {
 
 h4 {
   font-size: 1em;
-  font-weight: 400;
+  font-weight: 300;
   color: #353535;
 }
 
@@ -79,20 +79,164 @@ header h1 {
 
 #EXPLORER {
   background-color: #f6f6f6;
-  height: 286px;
+  height: 186px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding: 24px 40px;
+  justify-content: space-between;
+  padding: 50px 40px;
   text-align: center;
 }
 
+/* ****************************** */
+/* ********** FONCTION ********** */
+/* ****************************** */
 #FONCTION {
   background-color: white;
+  padding: 50px 20px;
 }
 
+.F_LISTE {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.F_LISTE_VGT {
+  position: relative;
+  display: flex;
+  height: 70px;
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  margin-left: 12px;
+  padding-left: 35px;
+  box-shadow: 3px 2px 21px 2px #d7d6d6;
+}
+.F_LISTE_VGT:hover {
+  background-color: #f5edff;
+}
+.F_LISTE_VGT:hover :nth-child(2) {
+  color: #9356DC;
+}
+.F_LISTE_VGT_NUM {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: -12px;
+  background-color: #9356DC;
+  color: white;
+  border-radius: 25px;
+  width: 24px;
+  height: 24px;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+.F_LISTE_VGT_ICN {
+  width: 15px;
+  font-size: 1.2em;
+  color: #525151;
+}
+.F_LISTE_VGT_TXT {
+  padding-left: 20px;
+  font-size: 1em;
+  font-weight: 700;
+  font-stretch: condensed;
+}
+
+/* ****************************** */
+/* ******** RESTAURANTS ********* */
+/* ****************************** */
 #RESTOS {
   background-color: #f6f6f6;
+  padding: 50px 20px;
+}
+
+.RESTOS_LST_VGT {
+  display: block;
+  height: 250px;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 3px 2px 21px 2px #d7d6d6;
+}
+
+.RESTOS_LST_VGT_IMG {
+  position: relative;
+}
+.RESTOS_LST_VGT_IMG_NVU {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #99E2D0;
+  padding: 6px 12px;
+  color: #008766;
+  font-weight: 400;
+  font-size: 0.9em;
+  border-radius: 2px;
+}
+
+.RESTOS_LST_VGT_IMG img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.RESTOS_LST_VGT_INF {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  height: 76px;
+  border-radius: 0 0 20px 20px;
+  padding-right: 22px;
+}
+
+.RESTOS_LST_VGT_INF_TXT {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 12px;
+}
+.RESTOS_LST_VGT_INF_TXT_NOM {
+  font-weight: 700;
+  padding-bottom: 2px;
+  font-size: 1.1em;
+}
+.RESTOS_LST_VGT_INF_TXT_VIL {
+  font-weight: 300;
+  padding-top: 2px;
+}
+
+.RESTOS_LST_VGT_INF_COEUR {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.RESTOS_LST_VGT_INF_COEUR_ICN {
+  width: 26px;
+  height: 26px;
+  position: relative;
+}
+.RESTOS_LST_VGT_INF_COEUR_ICN:hover > .COEUR_PLEIN {
+  animation: FULLHEART 500ms cubic-bezier(1, 0.32, 1, 1) 0s 1 normal forwards;
+}
+.RESTOS_LST_VGT_INF_COEUR_ICN i {
+  font-size: 26px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.RESTOS_LST_VGT_INF_COEUR .COEUR_VIDE {
+  color: black;
+  z-index: 2;
+}
+.RESTOS_LST_VGT_INF_COEUR .COEUR_PLEIN {
+  z-index: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 /* ********************************* */
