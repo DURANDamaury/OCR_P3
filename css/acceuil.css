@@ -1,3 +1,23 @@
+@charset "UTF-8";
+/* La map suivante controle si dans une carte restaurant
+la case "nouveau" est affichée ou non.
+le numéro correspond au numéro du restaurant. */
+.MENU1 > .RESTOS_LST_VGT_IMG > .RESTOS_LST_VGT_IMG_NVU {
+  display: block;
+}
+
+.MENU2 > .RESTOS_LST_VGT_IMG > .RESTOS_LST_VGT_IMG_NVU {
+  display: block;
+}
+
+.MENU3 > .RESTOS_LST_VGT_IMG > .RESTOS_LST_VGT_IMG_NVU {
+  display: none;
+}
+
+.MENU4 > .RESTOS_LST_VGT_IMG > .RESTOS_LST_VGT_IMG_NVU {
+  display: none;
+}
+
 h1 {
   font-size: 1.7em;
 }
@@ -175,6 +195,8 @@ header h1 {
   font-size: 0.9em;
   border-radius: 2px;
 }
+
+
 
 .RESTOS_LST_VGT_IMG img {
   width: 100%;

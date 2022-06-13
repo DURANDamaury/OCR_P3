@@ -4,7 +4,10 @@ $GREEN: #99E2D0;
 $GREY: #353535;
 $GREYWHITE: #f6f6f6;
 $COEUR_DIMENSION: 26px;
-
+/* La map suivante controle si dans une carte restaurant
+la case "nouveau" est affichée ou non.
+le numéro correspond au numéro du restaurant. */
+$MENU_NOUVEAU: (1:block, 2:block, 3:none, 4:none);
 
 @mixin flex_centre
     {
@@ -201,6 +204,17 @@ header
         font-weight: 400;
         font-size: 0.9em;
         border-radius: 2px;}
+    }
+
+@each $RESTO,$VALUE in $MENU_NOUVEAU
+    {
+        .MENU
+        {
+            &#{$RESTO}>.RESTOS_LST_VGT_IMG>.RESTOS_LST_VGT_IMG_NVU
+            {
+                display: $VALUE;
+            }
+        }
     }
 
 .RESTOS_LST_VGT_IMG img
