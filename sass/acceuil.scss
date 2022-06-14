@@ -1,20 +1,6 @@
-$PURPLE: #9356DC;
-$ROSE: #FF79DA;
-$GREEN: #99E2D0;
-$GREY: #353535;
-$GREYWHITE: #f6f6f6;
-$COEUR_DIMENSION: 26px;
-/* La map suivante controle si dans une carte restaurant
-la case "nouveau" est affichée ou non.
-le numéro correspond au numéro du restaurant. */
-$MENU_NOUVEAU: (1:block, 2:block, 3:none, 4:none);
-
-@mixin flex_centre
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+@import "./utils/variables.scss";
+@import "./utils/mixins.scss";
+@import "./base/animations";
 
 h1
     {
@@ -180,121 +166,121 @@ header
         padding: 50px 20px;
     }
 
-.RESTOS_LST_VGT
-    {
-        display: block;
-        height: 250px;
-        text-decoration: none;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        border-radius: 20px;
-        box-shadow: 3px 2px 21px 2px #d7d6d6;
-    }
-
-.RESTOS_LST_VGT_IMG
-    {
-        position: relative;
-        &_NVU
-        {position: absolute;
-        top: 20px;
-        right: 20px;
-        background-color: $GREEN;
-        padding: 6px 12px;
-        color: #008766;
-        font-weight: 400;
-        font-size: 0.9em;
-        border-radius: 2px;}
-    }
-
-@each $RESTO,$VALUE in $MENU_NOUVEAU
-    {
-        .MENU
+    .RESTOS_LST_VGT
         {
-            &#{$RESTO}>.RESTOS_LST_VGT_IMG>.RESTOS_LST_VGT_IMG_NVU
-            {
-                display: $VALUE;
-            }
+            display: block;
+            height: 250px;
+            text-decoration: none;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            box-shadow: 3px 2px 21px 2px #d7d6d6;
         }
-    }
 
-.RESTOS_LST_VGT_IMG img
-    {
-        width: 100%;
-        height: 170px;
-        object-fit: cover;
-        border-radius: 20px 20px 0 0;
-    }
-
-.RESTOS_LST_VGT_INF
-    {   
-        background-color: white;
-        display: flex;
-        justify-content: space-between;
-        height: 76px;
-        border-radius: 0 0 20px 20px;
-        padding-right: 22px;
-    }
-
-.RESTOS_LST_VGT_INF_TXT
-    {
-        color: black;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-left: 12px;
-        &_NOM
+    .RESTOS_LST_VGT_IMG
         {
-            font-weight: 700;
-            padding-bottom: 2px;
-            font-size: 1.1em;
-        }
-        &_VIL
-        {
-            font-weight: 300;
-            padding-top: 2px;
-        }
-    }
-
-
-.RESTOS_LST_VGT_INF_COEUR
-    {
-    @include flex_centre;
-    &_ICN
-        {
-            width: $COEUR_DIMENSION;
-            height: $COEUR_DIMENSION;
             position: relative;
-            &:hover>.COEUR_PLEIN
-            {
-                animation: FULLHEART 500ms cubic-bezier(1, 0.32, 1, 1) 0s 1 normal forwards;
+            &_NVU
+            {position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: $GREEN;
+            padding: 6px 12px;
+            color: #008766;
+            font-weight: 400;
+            font-size: 0.9em;
+            border-radius: 2px;}
+        }
 
+    @each $RESTO,$VALUE in $MENU_NOUVEAU
+        {
+            .MENU
+            {
+                &#{$RESTO}>.RESTOS_LST_VGT_IMG>.RESTOS_LST_VGT_IMG_NVU
+                {
+                    display: $VALUE;
+                }
+            }
+        }
+
+    .RESTOS_LST_VGT_IMG img
+        {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+        }
+
+    .RESTOS_LST_VGT_INF
+        {   
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            height: 76px;
+            border-radius: 0 0 20px 20px;
+            padding-right: 22px;
+        }
+
+    .RESTOS_LST_VGT_INF_TXT
+        {
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 12px;
+            &_NOM
+            {
+                font-weight: 700;
+                padding-bottom: 2px;
+                font-size: 1.1em;
+            }
+            &_VIL
+            {
+                font-weight: 300;
+                padding-top: 2px;
+            }
+        }
+
+
+    .RESTOS_LST_VGT_INF_COEUR
+        {
+        @include flex_centre;
+        &_ICN
+            {
+                width: $COEUR_DIMENSION;
+                height: $COEUR_DIMENSION;
+                position: relative;
+                &:hover>.COEUR_PLEIN
+                {
+                    animation: FULLHEART 500ms cubic-bezier(1, 0.32, 1, 1) 0s 1 normal forwards;
+
+                }
+
+                i
+                {
+                    font-size: $COEUR_DIMENSION;
+                    position: absolute;
+                    top: 0;
+                    left: 0; 
+
+                }
             }
 
-            i
+            .COEUR_VIDE 
             {
-                font-size: $COEUR_DIMENSION;
-                position: absolute;
-                top: 0;
-                left: 0; 
+            color: black;
+            z-index: 2;
+            }
+            .COEUR_PLEIN 
+            {
+            z-index: 0;
+            background-clip: text;
+            -webkit-background-clip:text;
+            color: transparent;
+
 
             }
         }
-
-        .COEUR_VIDE 
-        {
-        color: black;
-        z-index: 2;
-        }
-        .COEUR_PLEIN 
-        {
-        z-index: 0;
-        background-clip: text;
-        -webkit-background-clip:text;
-        color: transparent;
-
-
-        }
-    }
 /* ********************************* */
 /* ************* FOOTER ************ */
 /* ********************************* */
@@ -309,5 +295,82 @@ footer
         {
             font-size: 14px;
             width: 30px;
+        }
+    }
+
+/* ********************************* */ 
+/* ************* LOADER ************ */ 
+/* ********************************* */ 
+.LOADER
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation-name: DISPARITION;
+        animation-duration: $LOADER_DUREE;
+        animation-timing-function: linear;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        &_ANIM
+            {
+                width: $LOADER_DIMENSION;
+                height: $LOADER_DIMENSION;
+                background-color: #cea4ff;
+                border: 5px solid #ead7ff;
+                border-radius: 50%;
+                position: relative;
+                div       /* on sélectionne toutes les div inférieures */
+                    {
+                        display: block;
+                        width: $LOADER_ROND;
+                        height: $LOADER_ROND;
+                        position: absolute;
+                        left: $LOADER_ROND_CENTRE;
+                        top: 0;
+                        border-radius: 50%;
+                        border: 1px solid black;
+                        /* durée | timing-function | delay | name */
+                        animation-name: ROTATE;
+                        animation-duration: 1s;
+                        animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+                        animation-iteration-count: 6;
+                        transform-origin: $LOADER_ROND_DEMI $LOADER_CENTRE;
+                    }
+                /* génération des delay pour chaque rond */
+                @for $i from 1 to $LOADER_NMR_ROND+1 
+                    {
+                        & div:nth-child(#{$i})
+                        {
+                            animation-delay: $i*100ms;
+                            background-color: rgb($i*40, 128, $i*30);
+                        }
+                    }
+            }
+    .COMPTEUR
+        {
+            position: absolute;
+
+            color: white;
+            font-size: 2.4em;
+            font-weight: 700;
+            width: 100px;
+            height: 100px;
+            @include flex_centre;
+            & div::after
+            {
+                    animation-name: POURCENT;
+                    animation-duration: $LOADER_DUREE;
+                    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    animation-direction: normal;
+                    animation-fill-mode: forwards;
+                    content: "0%";
+            }
+                
         }
     }

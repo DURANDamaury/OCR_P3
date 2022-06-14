@@ -1,0 +1,27 @@
+@keyframes ROTATE
+    {
+        from 
+        {
+            transform: rotate(0deg);
+        }
+        to 
+        {
+            transform: rotate(359deg);
+        }
+    }
+
+@keyframes POURCENT 
+    {
+        @for $i from 0 through 99 
+        {
+            #{$i}% {content: ""+$i+"%"}
+        }
+    }
+
+@keyframes DISPARITION 
+    {
+        from 
+        {visibility: visible;}
+        to 
+        {visibility: hidden;}        
+    }

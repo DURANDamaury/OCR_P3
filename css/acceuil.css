@@ -1,23 +1,330 @@
 @charset "UTF-8";
+/* variables du loader */
+/* largeur du bloc */
+/* centre du bloc */
+/* largeur d'un rond */
+/* nombre de ronds */
 /* La map suivante controle si dans une carte restaurant
 la case "nouveau" est affichée ou non.
 le numéro correspond au numéro du restaurant. */
-.MENU1 > .RESTOS_LST_VGT_IMG > .RESTOS_LST_VGT_IMG_NVU {
-  display: block;
+@keyframes ROTATE {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
-
-.MENU2 > .RESTOS_LST_VGT_IMG > .RESTOS_LST_VGT_IMG_NVU {
-  display: block;
+@keyframes POURCENT {
+  0% {
+    content: "0%";
+  }
+  1% {
+    content: "1%";
+  }
+  2% {
+    content: "2%";
+  }
+  3% {
+    content: "3%";
+  }
+  4% {
+    content: "4%";
+  }
+  5% {
+    content: "5%";
+  }
+  6% {
+    content: "6%";
+  }
+  7% {
+    content: "7%";
+  }
+  8% {
+    content: "8%";
+  }
+  9% {
+    content: "9%";
+  }
+  10% {
+    content: "10%";
+  }
+  11% {
+    content: "11%";
+  }
+  12% {
+    content: "12%";
+  }
+  13% {
+    content: "13%";
+  }
+  14% {
+    content: "14%";
+  }
+  15% {
+    content: "15%";
+  }
+  16% {
+    content: "16%";
+  }
+  17% {
+    content: "17%";
+  }
+  18% {
+    content: "18%";
+  }
+  19% {
+    content: "19%";
+  }
+  20% {
+    content: "20%";
+  }
+  21% {
+    content: "21%";
+  }
+  22% {
+    content: "22%";
+  }
+  23% {
+    content: "23%";
+  }
+  24% {
+    content: "24%";
+  }
+  25% {
+    content: "25%";
+  }
+  26% {
+    content: "26%";
+  }
+  27% {
+    content: "27%";
+  }
+  28% {
+    content: "28%";
+  }
+  29% {
+    content: "29%";
+  }
+  30% {
+    content: "30%";
+  }
+  31% {
+    content: "31%";
+  }
+  32% {
+    content: "32%";
+  }
+  33% {
+    content: "33%";
+  }
+  34% {
+    content: "34%";
+  }
+  35% {
+    content: "35%";
+  }
+  36% {
+    content: "36%";
+  }
+  37% {
+    content: "37%";
+  }
+  38% {
+    content: "38%";
+  }
+  39% {
+    content: "39%";
+  }
+  40% {
+    content: "40%";
+  }
+  41% {
+    content: "41%";
+  }
+  42% {
+    content: "42%";
+  }
+  43% {
+    content: "43%";
+  }
+  44% {
+    content: "44%";
+  }
+  45% {
+    content: "45%";
+  }
+  46% {
+    content: "46%";
+  }
+  47% {
+    content: "47%";
+  }
+  48% {
+    content: "48%";
+  }
+  49% {
+    content: "49%";
+  }
+  50% {
+    content: "50%";
+  }
+  51% {
+    content: "51%";
+  }
+  52% {
+    content: "52%";
+  }
+  53% {
+    content: "53%";
+  }
+  54% {
+    content: "54%";
+  }
+  55% {
+    content: "55%";
+  }
+  56% {
+    content: "56%";
+  }
+  57% {
+    content: "57%";
+  }
+  58% {
+    content: "58%";
+  }
+  59% {
+    content: "59%";
+  }
+  60% {
+    content: "60%";
+  }
+  61% {
+    content: "61%";
+  }
+  62% {
+    content: "62%";
+  }
+  63% {
+    content: "63%";
+  }
+  64% {
+    content: "64%";
+  }
+  65% {
+    content: "65%";
+  }
+  66% {
+    content: "66%";
+  }
+  67% {
+    content: "67%";
+  }
+  68% {
+    content: "68%";
+  }
+  69% {
+    content: "69%";
+  }
+  70% {
+    content: "70%";
+  }
+  71% {
+    content: "71%";
+  }
+  72% {
+    content: "72%";
+  }
+  73% {
+    content: "73%";
+  }
+  74% {
+    content: "74%";
+  }
+  75% {
+    content: "75%";
+  }
+  76% {
+    content: "76%";
+  }
+  77% {
+    content: "77%";
+  }
+  78% {
+    content: "78%";
+  }
+  79% {
+    content: "79%";
+  }
+  80% {
+    content: "80%";
+  }
+  81% {
+    content: "81%";
+  }
+  82% {
+    content: "82%";
+  }
+  83% {
+    content: "83%";
+  }
+  84% {
+    content: "84%";
+  }
+  85% {
+    content: "85%";
+  }
+  86% {
+    content: "86%";
+  }
+  87% {
+    content: "87%";
+  }
+  88% {
+    content: "88%";
+  }
+  89% {
+    content: "89%";
+  }
+  90% {
+    content: "90%";
+  }
+  91% {
+    content: "91%";
+  }
+  92% {
+    content: "92%";
+  }
+  93% {
+    content: "93%";
+  }
+  94% {
+    content: "94%";
+  }
+  95% {
+    content: "95%";
+  }
+  96% {
+    content: "96%";
+  }
+  97% {
+    content: "97%";
+  }
+  98% {
+    content: "98%";
+  }
+  99% {
+    content: "99%";
+  }
 }
-
-.MENU3 > .RESTOS_LST_VGT_IMG > .RESTOS_LST_VGT_IMG_NVU {
-  display: none;
+@keyframes DISPARITION {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
 }
-
-.MENU4 > .RESTOS_LST_VGT_IMG > .RESTOS_LST_VGT_IMG_NVU {
-  display: none;
-}
-
 h1 {
   font-size: 1.7em;
 }
@@ -196,7 +503,21 @@ header h1 {
   border-radius: 2px;
 }
 
+.MENU1 > .RESTOS_LST_VGT_IMG > .RESTOS_LST_VGT_IMG_NVU {
+  display: block;
+}
 
+.MENU2 > .RESTOS_LST_VGT_IMG > .RESTOS_LST_VGT_IMG_NVU {
+  display: block;
+}
+
+.MENU3 > .RESTOS_LST_VGT_IMG > .RESTOS_LST_VGT_IMG_NVU {
+  display: none;
+}
+
+.MENU4 > .RESTOS_LST_VGT_IMG > .RESTOS_LST_VGT_IMG_NVU {
+  display: none;
+}
 
 .RESTOS_LST_VGT_IMG img {
   width: 100%;
@@ -273,6 +594,94 @@ footer {
 footer i {
   font-size: 14px;
   width: 30px;
+}
+
+/* ********************************* */
+/* ************* LOADER ************ */
+/* ********************************* */
+.LOADER {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: DISPARITION;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+.LOADER_ANIM {
+  width: 100px;
+  height: 100px;
+  background-color: #cea4ff;
+  border: 5px solid #ead7ff;
+  border-radius: 50%;
+  position: relative;
+  /* génération des delay pour chaque rond */
+}
+.LOADER_ANIM div {
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 45px;
+  top: 0;
+  border-radius: 50%;
+  border: 1px solid black;
+  /* durée | timing-function | delay | name */
+  animation-name: ROTATE;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  animation-iteration-count: 6;
+  transform-origin: 5px 50px;
+}
+.LOADER_ANIM div:nth-child(1) {
+  animation-delay: 100ms;
+  background-color: rgb(40, 128, 30);
+}
+.LOADER_ANIM div:nth-child(2) {
+  animation-delay: 200ms;
+  background-color: rgb(80, 128, 60);
+}
+.LOADER_ANIM div:nth-child(3) {
+  animation-delay: 300ms;
+  background-color: rgb(120, 128, 90);
+}
+.LOADER_ANIM div:nth-child(4) {
+  animation-delay: 400ms;
+  background-color: rgb(160, 128, 120);
+}
+.LOADER_ANIM div:nth-child(5) {
+  animation-delay: 500ms;
+  background-color: rgb(200, 128, 150);
+}
+.LOADER_ANIM div:nth-child(6) {
+  animation-delay: 600ms;
+  background-color: rgb(240, 128, 180);
+}
+.LOADER .COMPTEUR {
+  position: absolute;
+  color: white;
+  font-size: 2.4em;
+  font-weight: 700;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.LOADER .COMPTEUR div::after {
+  animation-name: POURCENT;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  content: "0%";
 }
 
 /*# sourceMappingURL=acceuil.css.map */

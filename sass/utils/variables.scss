@@ -1,0 +1,18 @@
+$PURPLE: #9356DC;
+$ROSE: #FF79DA;
+$GREEN: #99E2D0;
+$GREY: #353535;
+$GREYWHITE: #f6f6f6;
+$COEUR_DIMENSION: 26px;
+/* variables du loader */ 
+$LOADER_DIMENSION: 100px;                           /* largeur du bloc */ 
+$LOADER_CENTRE: calc($LOADER_DIMENSION / 2);        /* centre du bloc */
+$LOADER_ROND: 10px;                                 /* largeur d'un rond */
+$LOADER_ROND_DEMI: calc($LOADER_ROND /2);
+$LOADER_ROND_CENTRE: calc($LOADER_CENTRE - $LOADER_ROND / 2);
+$LOADER_NMR_ROND: 6;                                /* nombre de ronds */
+$LOADER_DUREE: 3s;
+/* La map suivante controle si dans une carte restaurant
+la case "nouveau" est affichée ou non.
+le numéro correspond au numéro du restaurant. */
+$MENU_NOUVEAU: (1:block, 2:block, 3:none, 4:none);
