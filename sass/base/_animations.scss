@@ -14,7 +14,7 @@
     {
         @for $i from 0 through 99 
         {
-            #{$i}% {content: ""+$i+"%"}
+            #{$i+'%'} {content: ""+$i+"%";}
         }
     }
 
@@ -24,4 +24,16 @@
         {visibility: visible;}
         to 
         {visibility: hidden;}        
+    }
+
+@keyframes FULLHEART
+    {
+        from
+        {transform: scale(0.5);
+        color: red;}
+        to 
+        {transform: scale(1);
+        color: red;
+        color: linear-gradient(0deg,#9356dc,#ff79da);
+        }
     }

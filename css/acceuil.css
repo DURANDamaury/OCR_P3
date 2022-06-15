@@ -325,6 +325,17 @@ le numéro correspond au numéro du restaurant. */
     visibility: hidden;
   }
 }
+@keyframes FULLHEART {
+  from {
+    transform: scale(0.5);
+    color: red;
+  }
+  to {
+    transform: scale(1);
+    color: red;
+    color: linear-gradient(0deg, #9356dc, #ff79da);
+  }
+}
 h1 {
   font-size: 1.7em;
 }
@@ -470,6 +481,19 @@ header h1 {
   font-stretch: condensed;
 }
 
+/* version desktop */
+@media screen and (min-width: 1024px) {
+  #FONCTION h3 {
+    padding-bottom: 13px;
+  }
+
+  .F_LISTE {
+    flex-direction: row;
+  }
+  .F_LISTE_VGT {
+    width: 30%;
+  }
+}
 /* ****************************** */
 /* ******** RESTAURANTS ********* */
 /* ****************************** */
@@ -582,6 +606,24 @@ header h1 {
   color: transparent;
 }
 
+/* version desktop */
+@media screen and (min-width: 1024px) {
+  .RESTOS_LST {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .RESTOS_LST_VGT {
+    width: 20%;
+    margin: 16px;
+  }
+
+  .RESTOS_LST_VGT_INF_COEUR_ICN:hover .COEUR_PLEIN {
+    animation: FULLHEART 500ms cubic-bezier(1, 0.32, 1, 1) 0s 1 normal forwards;
+  }
+}
 /* ********************************* */
 /* ************* FOOTER ************ */
 /* ********************************* */
@@ -628,6 +670,7 @@ footer i {
   display: block;
   width: 10px;
   height: 10px;
+  opacity: 0.5;
   position: absolute;
   left: 45px;
   top: 0;
@@ -642,27 +685,27 @@ footer i {
 }
 .LOADER_ANIM div:nth-child(1) {
   animation-delay: 100ms;
-  background-color: rgb(40, 128, 30);
+  background-color: rgb(40, 64, 30);
 }
 .LOADER_ANIM div:nth-child(2) {
   animation-delay: 200ms;
-  background-color: rgb(80, 128, 60);
+  background-color: rgb(80, 64, 60);
 }
 .LOADER_ANIM div:nth-child(3) {
   animation-delay: 300ms;
-  background-color: rgb(120, 128, 90);
+  background-color: rgb(120, 64, 90);
 }
 .LOADER_ANIM div:nth-child(4) {
   animation-delay: 400ms;
-  background-color: rgb(160, 128, 120);
+  background-color: rgb(160, 64, 120);
 }
 .LOADER_ANIM div:nth-child(5) {
   animation-delay: 500ms;
-  background-color: rgb(200, 128, 150);
+  background-color: rgb(200, 64, 150);
 }
 .LOADER_ANIM div:nth-child(6) {
   animation-delay: 600ms;
-  background-color: rgb(240, 128, 180);
+  background-color: rgb(240, 64, 180);
 }
 .LOADER .COMPTEUR {
   position: absolute;

@@ -157,6 +157,22 @@ header
             }
         }
     }
+/* version desktop */
+@media screen and (min-width: 1024px)
+{
+#FONCTION h3
+    {
+        padding-bottom: 13px;
+    }
+.F_LISTE
+    {
+        flex-direction: row;
+        &_VGT
+        {
+            width: 30%;
+        }
+    }    
+}
 /* ****************************** */ 
 /* ******** RESTAURANTS ********* */ 
 /* ****************************** */ 
@@ -281,6 +297,27 @@ header
 
             }
         }
+
+/* version desktop */
+@media screen and (min-width: 1024px)
+{
+.RESTOS_LST
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+.RESTOS_LST_VGT
+    {
+        width: 20%;
+        margin: 16px;
+    }
+.RESTOS_LST_VGT_INF_COEUR_ICN:hover .COEUR_PLEIN
+{    
+    animation: FULLHEART 500ms cubic-bezier(1, 0.32, 1, 1) 0s 1 normal forwards;
+}
+}
 /* ********************************* */
 /* ************* FOOTER ************ */
 /* ********************************* */
@@ -330,6 +367,7 @@ footer
                         display: block;
                         width: $LOADER_ROND;
                         height: $LOADER_ROND;
+                        opacity: 0.5;
                         position: absolute;
                         left: $LOADER_ROND_CENTRE;
                         top: 0;
@@ -348,7 +386,7 @@ footer
                         & div:nth-child(#{$i})
                         {
                             animation-delay: $i*100ms;
-                            background-color: rgb($i*40, 128, $i*30);
+                            background-color: rgb($i*40, 64, $i*30);
                         }
                     }
             }
