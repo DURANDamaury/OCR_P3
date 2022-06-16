@@ -24,6 +24,8 @@ h3
         font-style: normal;
         margin-top: 0;
         margin-bottom: 8px;
+        @media screen and (min-width: 1024px)
+        {text-align: center;}
     }
 
 h4
@@ -62,7 +64,8 @@ body
 
 .ICN
     {
-        width: 48px;
+        width: fit-content;
+        padding-right: 8px;
         height: 48px;
         @include flex_centre
     }
@@ -76,8 +79,13 @@ header
         {
             margin: 0%;
         }
+@media screen and (min-width: 1024px)
+{      
+    height: 32px;
+    padding: 16px;   
+}
+/* ----------------------------------- */
     }
-
 #LIEU
     {
         background-color: #eaeaea;
@@ -96,6 +104,11 @@ header
         justify-content: space-between;
         padding: 50px 40px;
         text-align: center;
+        @media screen and (min-width: 1024px)
+        {
+            height: 150px;
+            padding: 18px 40px;
+        }
     }
 /* ****************************** */ 
 /* ********** FONCTION ********** */ 
@@ -104,6 +117,8 @@ header
     {
         background-color: white;
         padding: 50px 20px;
+    @media screen and (min-width: 1024px)
+    {   padding: 20px 20px;}
     }
 
 .F_LISTE
@@ -111,6 +126,8 @@ header
         display: flex;
         flex-direction: column;
         gap: 20px;
+        @media screen and (min-width: 1024px)
+        {flex-direction: row; justify-content: center;}
         &_VGT
         {
             position: relative;
@@ -122,12 +139,14 @@ header
             margin-left: 12px;
             padding-left: 35px;
             box-shadow: 3px 2px 21px 2px #d7d6d6;
+            @media screen and (min-width: 1024px) {width: 14%;}
             &:hover
             {
                 background-color: #f5edff;
                 & :nth-child(2)
                 {color: $PURPLE;}
             }
+            
             &_NUM
             {
                 @include flex_centre;
@@ -163,15 +182,7 @@ header
 #FONCTION h3
     {
         padding-bottom: 13px;
-    }
-.F_LISTE
-    {
-        flex-direction: row;
-        &_VGT
-        {
-            width: 30%;
-        }
-    }    
+    }  
 }
 /* ****************************** */ 
 /* ******** RESTAURANTS ********* */ 
@@ -180,6 +191,8 @@ header
     {
         background-color: $GREYWHITE;
         padding: 50px 20px;
+    @media screen and (min-width: 1024px)
+        {padding: 20px 20px;}
     }
 
     .RESTOS_LST_VGT
@@ -285,16 +298,14 @@ header
             .COEUR_VIDE 
             {
             color: black;
-            z-index: 2;
+            //z-index: 2;
             }
             .COEUR_PLEIN 
             {
-            z-index: 0;
+            //z-index: 1;
             background-clip: text;
             -webkit-background-clip:text;
             color: transparent;
-
-
             }
         }
 
@@ -315,7 +326,7 @@ header
     }
 .RESTOS_LST_VGT_INF_COEUR_ICN:hover .COEUR_PLEIN
 {    
-    animation: FULLHEART 500ms cubic-bezier(1, 0.32, 1, 1) 0s 1 normal forwards;
+    animation: FULLHEART 500ms cubic-bezier(1, 0.32, 1, 1) 0s  normal forwards;
 }
 }
 /* ********************************* */
@@ -327,7 +338,8 @@ footer
         background-color: $GREY;
         color: white;
         line-height: 1.8em;
-
+        @media screen and (min-width: 1024px)
+        {padding: 10px 150px;}
         i 
         {
             font-size: 14px;
@@ -372,7 +384,7 @@ footer
                         left: $LOADER_ROND_CENTRE;
                         top: 0;
                         border-radius: 50%;
-                        border: 1px solid black;
+                        border: 1px solid white;
                         /* durée | timing-function | delay | name */
                         animation-name: ROTATE;
                         animation-duration: 1s;
