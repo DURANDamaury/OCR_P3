@@ -77,12 +77,12 @@ body
         font-family: 'Roboto', sans-serif;
         font-weight: 100;
         width: 100%;
-        ul 
-        {
-            list-style: none;
-            text-align: left;
-            padding-left: 0;
-        }
+        // ul 
+        // {
+        //     list-style: none;
+        //     text-align: left;
+        //     padding-left: 0;
+        // }
     }
 
 h1
@@ -108,28 +108,32 @@ h3
         margin-top: 0;
         margin-bottom: 8px;
     }
-
-
-
-header
-    {
-        padding: 5%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        i , .space
-        {
-            width: 10%;
-            font-size: 1.5em;
-        }
-        h1 
-        {
-            margin: 0%;
-        }
-    }
+/* ********************************* */ 
+/* *********** HEADER ************** */ 
+/* ********************************* */ 
+@import "./layout/header";
 /* ********************************* */
 /* ************** MAIN ************* */
 /* ********************************* */
+main 
+{
+@media screen and (min-width: 1024px)
+    {
+        padding: 0 15%;
+        background-color: $GREEN;
+    }
+}
+
+#MENU
+    {
+        @media screen and (min-width: 1024px)
+            {
+                display: flex;
+                justify-content: space-around;
+                background-color: $GREYWHITE;
+            }
+    }
+
 #IMAGE 
     {
         position: sticky;
@@ -196,12 +200,13 @@ header
         padding-right: 3%;
         background-color: $GREYWHITE;
 
-        .CARTE_DECORATION
+        &_DECORATION
             {width: 40px; height: 14px; border-top: 3px solid $GREEN;}
         
-        .RECETTE_LISTE {background-color: $GREYWHITE; padding-bottom: 14px;}
+        &_LISTE {background-color: $GREYWHITE; padding-bottom: 14px;}
 
-        .RECETTE 
+
+        .CARTE_LISTE_RECETTE 
             {
                 display: flex;
                 justify-content: space-between;
@@ -275,7 +280,8 @@ header
                             
                         }
             }
-
+    @media screen and (min-width: 1024px)
+    {width: 25%;}
     }
 
 #COMMANDE
@@ -304,16 +310,4 @@ header
 /* ********************************* */
 /* ************* FOOTER ************ */
 /* ********************************* */
-footer
-    {
-        padding: 5%;
-        background-color: $GREY;
-        color: white;
-        line-height: 1.8em;
-
-        i 
-        {
-            font-size: 14px;
-            width: 30px;
-        }
-    }
+@import "./layout/footer.scss";

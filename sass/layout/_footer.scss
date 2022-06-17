@@ -1,0 +1,14 @@
+footer
+    {
+        padding: 5%;
+        background-color: $GREY;
+        color: white;
+        line-height: 1.8em;
+        li {list-style-type: none;}
+        i {font-size: 14px; width: 30px;}
+
+        @media screen and (min-width: 1024px)
+        {padding: 10px 287px; }
+        
+
+    }

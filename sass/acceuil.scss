@@ -69,23 +69,21 @@ body
         height: 48px;
         @include flex_centre
     }
-
-header
-    {
-        padding: 5%;
-        @include flex_centre;
-
-        h1 
-        {
-            margin: 0%;
-        }
-@media screen and (min-width: 1024px)
-{      
-    height: 32px;
-    padding: 16px;   
-}
+/* ********************************** */ 
+/* ************* HEADER ************* */ 
+/* ********************************** */ 
+@import "./layout/header"; 
+a {display: none;}
 /* ----------------------------------- */
+main 
+{
+@media screen and (min-width: 1024px)
+    {
+        padding: 0 15%;
+        background-color: $GREEN;
     }
+}
+
 #LIEU
     {
         background-color: #eaeaea;
@@ -139,7 +137,7 @@ header
             margin-left: 12px;
             padding-left: 35px;
             box-shadow: 3px 2px 21px 2px #d7d6d6;
-            @media screen and (min-width: 1024px) {width: 14%;}
+            @media screen and (min-width: 1024px) {width: 20%;}
             &:hover
             {
                 background-color: #f5edff;
@@ -332,20 +330,7 @@ header
 /* ********************************* */
 /* ************* FOOTER ************ */
 /* ********************************* */
-footer
-    {
-        padding: 5%;
-        background-color: $GREY;
-        color: white;
-        line-height: 1.8em;
-        @media screen and (min-width: 1024px)
-        {padding: 10px 150px;}
-        i 
-        {
-            font-size: 14px;
-            width: 30px;
-        }
-    }
+@import "./layout/footer.scss";
 
 /* ********************************* */ 
 /* ************* LOADER ************ */ 

@@ -1,0 +1,22 @@
+header
+    {
+        padding: 5%;
+        position: relative;
+        text-align: center;
+        i
+        {
+            position: absolute;
+            left: 255px;
+            width: 10%;
+            font-size: 1.5em;
+        }
+        h1 
+        {
+            margin: 0%;
+        }
+        @media screen and (min-width: 1024px)
+        {      
+            height: 32px;
+            padding: 16px;   
+        }
+    }
