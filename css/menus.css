@@ -117,9 +117,9 @@ header {
   position: relative;
   text-align: center;
 }
-header i {
+header a {
   position: absolute;
-  left: 255px;
+  left: 33px;
   width: 10%;
   font-size: 1.5em;
 }
@@ -130,6 +130,9 @@ header h1 {
   header {
     height: 32px;
     padding: 16px;
+  }
+  header a {
+    left: 255px;
   }
 }
 

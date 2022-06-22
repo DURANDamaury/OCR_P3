@@ -3,10 +3,10 @@ header
         padding: 5%;
         position: relative;
         text-align: center;
-        i
+        a
         {
             position: absolute;
-            left: 255px;
+            left: 33px;
             width: 10%;
             font-size: 1.5em;
         }
@@ -17,6 +17,7 @@ header
         @media screen and (min-width: 1024px)
         {      
             height: 32px;
-            padding: 16px;   
+            padding: 16px;
+            a {left: 255px;}   
         }
     }
