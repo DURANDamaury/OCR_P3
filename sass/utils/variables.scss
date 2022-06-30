@@ -16,3 +16,7 @@ $LOADER_DUREE: 3s;
 la case "nouveau" est affichée ou non.
 le numéro correspond au numéro du restaurant. */
 $MENU_NOUVEAU: (1:block, 2:block, 3:none, 4:none);
+/* variables spécifiques aux menus */
+$NBR_RECETTE: 3; /* nombre de recette par carte */ 
+$CARTE_ANIM: 700ms; /* durée de l'animation des cartes */ 
+$RECETTE_ANIM: calc($CARTE_ANIM / $NBR_RECETTE) ; /* Durée de l'animation d'une recette */ 

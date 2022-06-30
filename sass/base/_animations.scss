@@ -36,3 +36,31 @@
         background-image: linear-gradient(0deg,#9356dc,#ff79da);
         }
     }
+
+/* Animations spécifiques aux menus */
+
+@keyframes SELECTION 
+    {
+        from 
+        { width: 0px; }
+        to 
+        { width: 65px; padding: 3%;}
+    }
+
+@keyframes ROTATION 
+    {
+        from 
+        { transform: rotate(270deg);}    
+        to 
+        { transform: rotate(0deg);}    
+    }
+
+@keyframes FULLHEART2
+    {
+        from
+        {transform: scale(0.5);
+        color: red;}
+        to 
+        {transform: scale(1);
+        color: red;}
+    }

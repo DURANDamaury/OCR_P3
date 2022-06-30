@@ -1,50 +1,16 @@
-$PURPLE: #9356DC;
-$ROSE: #FF79DA;
-$GREEN: #99E2D0;
-$GREY: #353535;
-$GREYWHITE: #f6f6f6;
-$COEUR_DIMENSION: 26px;
-$NBR_RECETTE: 3; /* nombre de recette par carte */ 
-$CARTE_ANIM: 700ms; /* durée de l'animation des cartes */ 
-$RECETTE_ANIM: calc($CARTE_ANIM / $NBR_RECETTE) ; /* Durée de l'animation d'une recette */ 
+@import "./utils/variables.scss";
+@import "./utils/mixins.scss";
+@import "./base/animations";
 
 
 
-/* ANIMATIONS */
 
-@mixin FLEX_CENTRE 
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;        
-    }
 
-@keyframes SELECTION 
-    {
-        from 
-        { width: 0px; }
-        to 
-        { width: 65px; padding: 3%;}
-    }
 
-@keyframes ROTATION 
-    {
-        from 
-        { transform: rotate(270deg);}    
-        to 
-        { transform: rotate(0deg);}    
-    }
-
-@keyframes FULLHEART
-    {
-        from
-        {transform: scale(0.5);
-        color: red;}
-        to 
-        {transform: scale(1);
-        color: red;}
-    }
-/* Animation des cartes au chargement */
+/* Animation des cartes au chargement
+Cette animation est laissée ici car contient une boucle ne
+concernant pas la page d'acceuil et n'a aucun interet à
+y être chargée */
 @keyframes ECART_RECETTES 
     {
         from 
@@ -55,7 +21,8 @@ $RECETTE_ANIM: calc($CARTE_ANIM / $NBR_RECETTE) ; /* Durée de l'animation d'une
         opacity: 1;}
     }
 
-/* on va générer le css de chaque recette avec un délais de démarrage différent */ 
+/* on va générer le css de chaque recette avec un délais
+de démarrage différent */ 
 @for $i from 1 through 4
     {
         .R_#{$i}
@@ -77,12 +44,6 @@ body
         font-family: 'Roboto', sans-serif;
         font-weight: 100;
         width: 100%;
-        // ul 
-        // {
-        //     list-style: none;
-        //     text-align: left;
-        //     padding-left: 0;
-        // }
     }
 
 h1
@@ -165,7 +126,7 @@ main
         position: relative;
         &:hover>.COEUR_PLEIN
         {
-            animation: FULLHEART 500ms cubic-bezier(1, 0.32, 1, 1) 0s 1 normal forwards;
+            animation: FULLHEART2 500ms cubic-bezier(1, 0.32, 1, 1) 0s 1 normal forwards;
 
         }
 
@@ -288,12 +249,12 @@ main
     {
         width: auto;
         height: 160px;
-        @include FLEX_CENTRE;
+        @include flex_centre;
         background-color: $GREYWHITE;
         #BOUTON
             {
                 height: 16px;
-                @include FLEX_CENTRE;
+                @include flex_centre;
                 background: linear-gradient( $ROSE , $PURPLE );
                 color: white;
                 font-weight: 400;

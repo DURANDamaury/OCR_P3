@@ -7,6 +7,10 @@
 /* La map suivante controle si dans une carte restaurant
 la case "nouveau" est affichée ou non.
 le numéro correspond au numéro du restaurant. */
+/* variables spécifiques aux menus */
+/* nombre de recette par carte */
+/* durée de l'animation des cartes */
+/* Durée de l'animation d'une recette */
 @keyframes ROTATE {
   from {
     transform: rotate(0deg);
@@ -335,6 +339,34 @@ le numéro correspond au numéro du restaurant. */
     background-image: linear-gradient(0deg, #9356dc, #ff79da);
   }
 }
+/* Animations spécifiques aux menus */
+@keyframes SELECTION {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 65px;
+    padding: 3%;
+  }
+}
+@keyframes ROTATION {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes FULLHEART2 {
+  from {
+    transform: scale(0.5);
+    color: red;
+  }
+  to {
+    transform: scale(1);
+    color: red;
+  }
+}
 h1 {
   font-size: 1.7em;
 }
@@ -429,7 +461,7 @@ header h1 {
   }
 }
 
-a {
+header a {
   display: none;
 }
 
@@ -691,6 +723,10 @@ footer li {
 footer i {
   font-size: 14px;
   width: 30px;
+}
+footer a {
+  text-decoration: none;
+  color: white;
 }
 @media screen and (min-width: 1024px) {
   footer {
